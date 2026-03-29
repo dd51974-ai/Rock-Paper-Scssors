@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8deae42-8fdb-4f31-a0e1-29bcadcb6ff4" name="Changes" comment="write to hide random_number_2.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e8deae42-8fdb-4f31-a0e1-29bcadcb6ff4" name="Changes" comment="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11">
       <change beforePath="$PROJECT_DIR$/random_number_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_number_2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774752129891</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11">
+      <option name="closed" value="true" />
+      <created>1774756884998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774756884998</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,7 +132,8 @@
     <MESSAGE value="create code for 15 minutes" />
     <MESSAGE value="add to write to elif: sentence" />
     <MESSAGE value="write to hide random_number_2.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="write to hide random_number_2.py" />
+    <MESSAGE value="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
