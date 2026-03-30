@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8deae42-8fdb-4f31-a0e1-29bcadcb6ff4" name="Changes" comment="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11">
+    <list default="true" id="e8deae42-8fdb-4f31-a0e1-29bcadcb6ff4" name="Changes" comment="rewrite to  random_number_2.py. Additional to write for break, guess &lt;= -1 between 9 to 10, being answer transferred from 5 line to 3 line">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/random_number_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_number_2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774757380179</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="rewrite to  random_number_2.py. Additional to write for break, guess &lt;= -1 between 9 to 10, being answer transferred from 5 line to 3 line">
+      <option name="closed" value="true" />
+      <created>1774785809662</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1774785809662</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,7 +152,8 @@
     <MESSAGE value="add to write to elif: sentence" />
     <MESSAGE value="write to hide random_number_2.py" />
     <MESSAGE value="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrite to  random_number_2.py. Additional to write for guess &gt;= 11 to &quot;else;&quot; between 8 to 11" />
+    <MESSAGE value="rewrite to  random_number_2.py. Additional to write for break, guess &lt;= -1 between 9 to 10, being answer transferred from 5 line to 3 line" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite to  random_number_2.py. Additional to write for break, guess &lt;= -1 between 9 to 10, being answer transferred from 5 line to 3 line" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
