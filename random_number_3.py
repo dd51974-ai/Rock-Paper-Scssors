@@ -14,7 +14,18 @@ def check_guess(answer, guess): # match or unmatch
         return "惜しい！小さいです！"
 
 def play_game():
-    answer = random.randit(1, 10)
+    answer = random.randint(1, 10)
     count = 1
     while count <= 3:
         guess = get_guess()
+        result = check_guess(answer, guess)
+
+        print(result) # from 21 line
+        if result == "正解！":
+            break
+        count += 1
+
+    else:
+        print("ゲームオーバー！", answer)
+
+play_game()
