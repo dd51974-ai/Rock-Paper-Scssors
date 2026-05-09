@@ -12,8 +12,9 @@ while True:
         print("登録しました!")
     elif choices == "2":
         choices_2 = input("単語を検索して下さい: ")
-        if choices_2 == choices_word:
-            print(dictionary)
+        # 辞書に存在するか確認する
+        if choices_2 in dictionary:
+            print(choices_2, ":", dictionary[choices_2]) #その単語の意味だけ表示
         else:
             print("!単語が見つかりません!")
     elif choices == "3":
