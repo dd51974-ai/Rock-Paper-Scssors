@@ -1,4 +1,5 @@
 import json
+total_money = []
 money_list = {}
 
 # Save
@@ -12,3 +13,23 @@ while True:
     print("4: 履歴を表示")
     print("5: 終了")
     choices = input("選択して下さい: ")
+
+    # Choice 1
+    if choices == "1":
+        choices_deposit = input("収入金額を記入して下さい")
+        # Calculation addtion
+        charge_money = sum(choices_deposit)
+        total_money = len(charge_money)
+        print(f"{total_money}円入金しました！")
+
+    # Choice 2 withdrawal
+    if choices == "2":
+        choices_withdrow = input("支出金額を記入して下さい")
+        withcash = total_money - choices_withdrow
+        print
+    # Choice 3 to balance
+    if choices == '3':
+        if choices_balance in money_list:
+            money_list
+    # Choice 4 resume
+    # Choice 5 to end
