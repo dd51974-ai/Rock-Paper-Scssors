@@ -1,10 +1,12 @@
 import json
+import os
 total_money = []
 money_list = {}
 
-# Save
-with open("money_list.json", "r") as f:
-    money_list = json.load(f)
+if os.path.exists("money_list.json"):
+    # Read
+    with open("money_list.json", "r") as f:
+        money_list = json.load(f)
 
 while True:
     print("1: 収入を追加")
@@ -18,9 +20,10 @@ while True:
     if choices == "1":
         choices_deposit = input("収入金額を記入して下さい")
         # Calculation addtion
-        charge_money = sum(choices_deposit)
-        total_money = len(charge_money)
+        total_money = sum(len(choices_deposit))
         print(f"{total_money}円入金しました！")
+        with open("total_money.json", "w") as f:
+            json.dump(total_money, f)
 
     # Choice 2 withdrawal
     if choices == "2":
