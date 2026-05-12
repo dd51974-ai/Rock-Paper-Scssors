@@ -20,8 +20,9 @@ while True:
     if choices == "1":
         choices_deposit = input("収入金額を記入して下さい")
         # Calculation addtion
-        total_money = sum(len(choices_deposit))
+        total_money = choices_deposit
         print(f"{total_money}円入金しました！")
+        # Save
         with open("total_money.json", "w") as f:
             json.dump(total_money, f)
 
@@ -32,7 +33,9 @@ while True:
         print
     # Choice 3 to balance
     if choices == '3':
+        choices_balance = total_money
         if choices_balance in money_list:
             money_list
+            print(total_money, ":", money_list[total_money])
     # Choice 4 resume
     # Choice 5 to end
