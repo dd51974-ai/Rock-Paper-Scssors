@@ -43,3 +43,6 @@ while True:
             print(total_money, ":", money_list[total_money])
     # Choice 4 resume
     # Choice 5 to end
+    if choices == "5":
+        print("終了します")
+        break
