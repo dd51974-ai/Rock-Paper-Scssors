@@ -19,6 +19,10 @@ while True:
     # Choice 1
     if choices == "1":
         choices_deposit = input("収入金額を記入して下さい")
+        choices_type = input("種類を選んで下さい 1: 収入, 2: 支出")
+        choices_memo = input("メモを記入して下さい")
+        if choices_type == "1":
+            print(f"種類: {choices_type}",  f"金額: {choices_deposit}",  f"メモ: {choices_memo}")
         # Calculation addtion
         total_money = choices_deposit
         print(f"{total_money}円入金しました！")
