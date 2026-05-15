@@ -26,6 +26,10 @@ while True:
     # Choice 1
     if choices == "1":
         choices_deposit = input("収入金額を記入して下さい: ")
+        if choices_deposit == "":
+            print("金額を入力して下さい")
+            continue
+
         choices_type = input("種類を選んで下さい 1: 収入, 2: 賞与, 3: その他: ")
         category_name = category_income.get(choices_type, "不明")
         data = {
@@ -37,15 +41,15 @@ while True:
         choices_memo = input("メモを記入して下さい: ")
         # Calculation addtion
         total_money = [choices_deposit, choices_type, choices_memo]
-        print(f"{choices_deposit}円入金しました！")
+        print(f"{choices_deposit}".format(), f"円入金しました！")
         if choices_type == "1":
-            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit}円", f"メモ: {choices_memo}")
+            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit.format()}円", f"メモ: {choices_memo}")
         elif choices_type == "2":
-            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit}円", f"メモ: {choices_memo}")
+            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit.format()}円", f"メモ: {choices_memo}")
         elif choices_type == "3":
-            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit}円", f"メモ: {choices_memo}")
+            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit.format()}円", f"メモ: {choices_memo}")
         else:
-            choices
+            print("金額を入力して下さい")
         # Save
         with open("total_money.json", "w") as f:
             json.dump(total_money, f)
