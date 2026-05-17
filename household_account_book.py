@@ -41,13 +41,13 @@ while True:
         choices_memo = input("メモを記入して下さい: ")
         # Calculation addtion
         total_money = [choices_deposit, choices_type, choices_memo]
-        print(f"{choices_deposit}".format(), f"円入金しました！")
+        print("{:,}円入金しました！".format(int(choices_deposit)))
         if choices_type == "1":
-            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit.format()}円", f"メモ: {choices_memo}")
+            print(f"種類: {category_income[choices_type]}", "金額: {:,}円".format(int(choices_deposit)), f"メモ: {choices_memo}")
         elif choices_type == "2":
-            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit.format()}円", f"メモ: {choices_memo}")
+            print(f"種類: {category_income[choices_type]}", "金額: {:,}円".format(int(choices_deposit)), f"メモ: {choices_memo}")
         elif choices_type == "3":
-            print(f"種類: {category_income[choices_type]}", f"金額: {choices_deposit.format()}円", f"メモ: {choices_memo}")
+            print(f"種類: {category_income[choices_type]}", "金額: {:,}円".format(int(choices_deposit)), f"メモ: {choices_memo}")
         else:
             print("金額を入力して下さい")
         # Save
