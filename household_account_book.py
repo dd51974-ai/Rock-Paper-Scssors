@@ -1,7 +1,9 @@
 import json
 import os
+# Resume list
 total_money = []
-money_list = {}
+# Balance
+money_list = 0
 
 if os.path.exists("money_list.json"):
     # Read
@@ -63,7 +65,7 @@ while True:
     if choices == '3':
         choices_balance = total_money
         if choices_balance in money_list:
-            money_list
+            total_money
             print(total_money, ":", money_list[total_money])
     # Choice 4 resume
     # Choice 5 to end
