@@ -7,8 +7,10 @@ money_list = 0
 
 if os.path.exists("money_list.json"):
     # Read
-    with open("money_list.json", "r") as f:
+    with open("money_list.json", "r", encoding="utf-8") as f:
         money_list = json.load(f)
+        total_money = data.get("total_money", [])
+        money_list = data.get("money_list", 0)
 
 while True:
     print("1: 収入を追加")
@@ -25,11 +27,11 @@ while True:
         "3": "その他"
     }
 
-    # Choice 1
+    # Choice 1 income
     if choices == "1":
         choices_deposit = input("収入金額を記入して下さい: ")
-        if choices_deposit == "":
-            print("金額を入力して下さい")
+        if choices_deposit == "" or not choices_deposit.isdigit():
+            print("正しい金額を入力して下さい")
             continue
 
         choices_type = input("種類を選んで下さい 1: 収入, 2: 賞与, 3: その他: ")
@@ -42,6 +44,11 @@ while True:
 
         choices_memo = input("メモを記入して下さい: ")
         # Calculation addtion
+
+        # Add resume
+        amount = int(choices_deposit)
+        money_list += amount
+
         total_money = [choices_deposit, choices_type, choices_memo]
         print("{:,}円入金しました！".format(int(choices_deposit)))
         if choices_type == "1":
