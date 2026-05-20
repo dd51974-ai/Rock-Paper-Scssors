@@ -12,6 +12,19 @@ if os.path.exists("money_list.json"):
         total_money = data.get("total_money", [])
         money_list = data.get("money_list", 0)
 
+# Create def save_data():
+def save_data():
+    with open("money_list.json", "r", encodeing="utf-8") as f:
+        json.dump({"total_money": total_money, "money_list": money_list}, f, ensure_ascii=False, indent=2)
+
+# Create to choice category income
+    category_income = {
+        "1": "収入",
+        "2": "賞与",
+        "3": "その他"
+    }
+# Create to choice category expense
+category_expense = {"1": "食費", "2": "交通費", "3": "その他"}
 while True:
     print("1: 収入を追加")
     print("2: 支出を追加")
@@ -19,13 +32,6 @@ while True:
     print("4: 履歴を表示")
     print("5: 終了")
     choices = input("選択して下さい: ")
-
-    # Kind of income
-    category_income = {
-        "1": "収入",
-        "2": "賞与",
-        "3": "その他"
-    }
 
     # Choice 1 income
     if choices == "1":
@@ -39,8 +45,6 @@ while True:
         data = {
             "category": category_name
         }
-        with open("total_money.json", "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False)
 
         choices_memo = input("メモを記入して下さい: ")
         # Calculation addtion
@@ -59,14 +63,15 @@ while True:
             print(f"種類: {category_income[choices_type]}", "金額: {:,}円".format(int(choices_deposit)), f"メモ: {choices_memo}")
         else:
             print("金額を入力して下さい")
-        # Save
+        # Save json 2
         with open("total_money.json", "w") as f:
             json.dump(total_money, f)
 
     # Choice 2 withdrawal
     if choices == "2":
-        choices_withdrow = input("支出金額を記入して下さい")
-        withcash = total_money - choices_withdrow
+        choices_withdrawal = input("支出金額を記入して下さい")
+        # If did not type choices_withdrow
+        withcash = total_money - choices_withdrawal
         print
     # Choice 3 to balance
     if choices == '3':
