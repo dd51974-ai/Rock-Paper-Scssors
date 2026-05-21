@@ -21,3 +21,7 @@ env/
 
 # Django
 db.sqlite3
+
+# .gitignoreに追加
+dictionary.json
+total_money.json
