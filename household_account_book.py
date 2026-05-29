@@ -5,24 +5,25 @@ total_money = []
 # Balance
 money_list = 0
 
+# Create def save_data():
+def save_data():
+    with open("money_list.json", "w", encodeing="utf-8") as f:
+        json.dump({"total_money": total_money, "money_list": money_list}, f, ensure_ascii=False, indent=2)
+
+# save_data()の中に読み込みを入れるのはNG
 if os.path.exists("money_list.json"):
     # Read
     with open("money_list.json", "r", encoding="utf-8") as f:
-        money_list = json.load(f)
+        data = json.load(f) #まずdataに読み込む
         total_money = data.get("total_money", [])
         money_list = data.get("money_list", 0)
 
-# Create def save_data():
-def save_data():
-    with open("money_list.json", "r", encodeing="utf-8") as f:
-        json.dump({"total_money": total_money, "money_list": money_list}, f, ensure_ascii=False, indent=2)
-
 # Create to choice category income
-    category_income = {
-        "1": "収入",
-        "2": "賞与",
-        "3": "その他"
-    }
+category_income = {
+    "1": "収入",
+    "2": "賞与",
+    "3": "その他"
+}
 # Create to choice category expense
 category_expense = {"1": "食費", "2": "交通費", "3": "その他"}
 while True:
@@ -35,12 +36,22 @@ while True:
 
     # Choice 1 income
     if choices == "1":
-        choices_deposit = input("収入金額を記入して下さい: ")
-        if choices_deposit == "" or not choices_deposit.isdigit():
-            print("正しい金額を入力して下さい")
-            continue
+        while True:
+            choices_deposit = input("収入金額を記入して下さい: ")
+            if choices_deposit > "0":
+                break
+            elif choices_deposit == "" or not choices_deposit.isdigit():
+                print("正しい金額を入力して下さい")
+                continue
 
-        choices_type = input("種類を選んで下さい 1: 収入, 2: 賞与, 3: その他: ")
+        # 種類の入力を内側のループで繰り返す
+        while True:
+            choices_type = input("種類を選んで下さい 1: 収入, 2: 賞与, 3: その他: ")
+            if choices_type in ("1", "2", "3"):
+                break
+            else:
+                print("指定された数字を入力して下さい")
+                continue
         category_name = category_income.get(choices_type, "不明")
         data = {
             "category": category_name
