@@ -41,7 +41,7 @@ while True:
             if choices_deposit == "" or not choices_deposit.isdigit(): #数字のみで構成されてるか
                 print("正しい金額を入力して下さい")
                 continue
-            elif int(choices_deposit > "0"):
+            elif int(choices_deposit) > 0:
                 break
 
 
@@ -63,7 +63,8 @@ while True:
 
         # Add resume
         amount = int(choices_deposit)
-        money_list += amount # Add balance
+        # Add balance
+        money_list += amount
 
         # Add dictionary methods in resume list 履歴リストに辞書形式で追加＊重要な修正
         total_money.append({
