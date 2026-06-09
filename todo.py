@@ -15,4 +15,6 @@ if os.path.exists("todo_list.json"):
         tasks = data.get("tasks", [])
 
 while True:
-    todo_list = input("本日のすることを記入して下さい")
+    todo_list = input("本日のすることを記入して下さい: ")
+    save_data()
+    break
