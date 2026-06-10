@@ -15,6 +15,18 @@ if os.path.exists("todo_list.json"):
         tasks = data.get("tasks", [])
 
 while True:
-    todo_list = input("本日のすることを記入して下さい: ")
-    save_data()
-    break
+    print("1: タスクを追加")
+    print("2: タスクを完了する")
+    print("3: タスクを削除")
+    print("4: タスク一覧を表示")
+    print("5: 終了")
+
+    if choices == "1":
+        while True:
+            todo_list = input("本日のすることを記入して下さい: ")
+            if todo_list == "":
+                print("記入をお願いします")
+                continue
+            else:
+                save_data()
+                break
