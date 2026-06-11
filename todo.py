@@ -30,3 +30,7 @@ while True:
             else:
                 save_data()
                 break
+
+    elif choices == "5":
+        print("終了します")
+        break
