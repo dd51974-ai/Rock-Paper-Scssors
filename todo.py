@@ -10,9 +10,14 @@ def save_data():
 
 # Roading
 if os.path.exists("todo_list.json"):
-    with open("todo_list.json", "r", encoding="uft-8") as f:
+    with open("todo_list.json", "r", encoding="utf-8") as f:
         data = json.load(f)
         tasks = data.get("tasks", [])
+
+task = {
+    "名前": "",
+    "完了": False
+}
 
 while True:
     print("1: タスクを追加")
@@ -20,6 +25,7 @@ while True:
     print("3: タスクを削除")
     print("4: タスク一覧を表示")
     print("5: 終了")
+    choices = input("選択して下さい: ")
 
     if choices == "1":
         while True:
@@ -30,6 +36,22 @@ while True:
             else:
                 save_data()
                 break
+
+    elif choices == "2":
+        if choices == True:
+            print("タスクを完了しました")
+
+
+    elif choices =="3":
+        while False:
+            print("タスクを削除しました")
+
+    elif choices == "4":
+        if not tasks:
+            print("履歴がありません")
+        else:
+            for i, record in enumerate(task,1):
+                print(f"{i}")
 
     elif choices == "5":
         print("終了します")
