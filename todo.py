@@ -38,7 +38,7 @@ while True:
                 break
 
     elif choices == "2":
-        if choices == True:
+        if tasks[0]["完了"] == True:
             print("タスクを完了しました")
 
 
