@@ -30,6 +30,8 @@ while True:
     if choices == "1":
         while True:
             todo_list = input("本日のすることを記入して下さい: ")
+            # Add list using dictionary 辞書を作ってリストに追加する
+            tasks.append({"名前": todo_list, "完了": False})
             if todo_list == "":
                 print("記入をお願いします")
                 continue
@@ -38,8 +40,9 @@ while True:
                 break
 
     elif choices == "2":
-        if tasks[0]["完了"] == True:
-            print("タスクを完了しました")
+        tasks[0]["完了"] = True
+        print("タスクを完了しました")
+        save_data()
 
 
     elif choices =="3":
