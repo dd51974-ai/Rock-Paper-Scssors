@@ -17,7 +17,7 @@ if os.path.exists("todo_list.json"):
 
 task = {
     "名前": "",
-    "No.": "",
+    "No.": tasks,
     "完了": False
 }
 
@@ -33,7 +33,7 @@ while True:
         while True:
             todo_list = input("本日のすることを記入して下さい: ")
             # Add list using dictionary 辞書を作ってリストに追加する
-            tasks.append({"名前": todo_list, "No.": len(todo_list), "完了": False})
+            tasks.append({"名前": todo_list, "No.": len(tasks) + 1, "完了": False})
             print(len(tasks))
             if todo_list == "":
                 print("記入をお願いします")
@@ -58,8 +58,9 @@ while True:
         if not tasks:
             print("履歴がありません")
         else:
-            for i, record in enumerate(task,1):
-                print(f"{i}")
+            for i, record in enumerate(tasks, 1):
+                mark = "✅" if record["完了"] else " "
+                print(f"[{mark} {i}: {record['名前']}")
 
     elif choices == "5":
         print("終了します")
