@@ -2,6 +2,7 @@ import json
 import os
 # Todo list
 tasks = []
+print(len(tasks))
 
 # Create def save_data()
 def save_data():
@@ -16,6 +17,7 @@ if os.path.exists("todo_list.json"):
 
 task = {
     "名前": "",
+    "No.": "",
     "完了": False
 }
 
@@ -31,7 +33,8 @@ while True:
         while True:
             todo_list = input("本日のすることを記入して下さい: ")
             # Add list using dictionary 辞書を作ってリストに追加する
-            tasks.append({"名前": todo_list, "完了": False})
+            tasks.append({"名前": todo_list, "No.": len(todo_list), "完了": False})
+            print(len(tasks))
             if todo_list == "":
                 print("記入をお願いします")
                 continue
@@ -40,13 +43,15 @@ while True:
                 break
 
     elif choices == "2":
-        tasks[0]["完了"] = True
+        number = int(input("完了にするタスク番号: ")) - 1
+        tasks[number]["完了"] = True
         print("タスクを完了しました")
         save_data()
 
 
     elif choices =="3":
         while False:
+            # 番号で削除する
             print("タスクを削除しました")
 
     elif choices == "4":
