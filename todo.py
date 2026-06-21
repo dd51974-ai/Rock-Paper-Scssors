@@ -48,11 +48,17 @@ while True:
         print("タスクを完了しました")
         save_data()
 
-
-    elif choices =="3":
-        while False:
-            # 番号で削除する
-            print("タスクを削除しました")
+    elif choices == "3":
+        while True:
+            select_delete = int(input("削除する番号を入力して下さい: ")) - 1
+            if 0 <= select_delete < len(tasks):
+                tasks.pop(select_delete)
+                print("タスクを削除しました")
+                save_data()
+                break
+            else:
+                print("番号がありません")
+                continue
 
     elif choices == "4":
         if not tasks:
@@ -60,7 +66,7 @@ while True:
         else:
             for i, record in enumerate(tasks, 1):
                 mark = "✅" if record["完了"] else " "
-                print(f"[{mark} {i}: {record['名前']}")
+                print(f"[{mark} ]{i}: {record['名前']}")
 
     elif choices == "5":
         print("終了します")
