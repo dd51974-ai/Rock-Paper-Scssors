@@ -14,6 +14,9 @@ if os.path.exists("todo_list.json"):
         data = json.load(f)
         tasks = data.get("books", [])
 
-books = {
-
+book = {
+    "借りる本の番号": books,
+    "借りる人の名前": "",
+    "本の名前": "",
+    "返却": False
 }
