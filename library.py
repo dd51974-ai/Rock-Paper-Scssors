@@ -20,3 +20,10 @@ book = {
     "本の名前": "",
     "返却": False
 }
+
+while True:
+    print("1: 本を新規登録")
+    print("2: 本を借りる")
+    print("3: 本を返す")
+    print("4: 一覧表示")
+    print("5: 終了")
