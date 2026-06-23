@@ -16,8 +16,8 @@ if os.path.exists("todo_list.json"):
 
 book = {
     "借りる本の番号": books,
-    "借りる人の名前": "",
     "本の名前": "",
+    "借りる人の名前": "",
     "返却": False
 }
 
@@ -27,3 +27,16 @@ while True:
     print("3: 本を返す")
     print("4: 一覧表示")
     print("5: 終了")
+    choices = input("選択して下さい")
+
+    if choices == "1":
+        while True:
+            new_register = input("本を新規登録して下さい")
+            books.append({"借りる本の番号": books, "本の名前": len(""), "借りる人の名前": len(""), "完了": False})
+            print(len(books))
+            if books == "":
+                print("記入をお願いします")
+                continue
+            else:
+                save_data()
+                break
