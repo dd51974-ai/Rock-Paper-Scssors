@@ -40,3 +40,24 @@ while True:
             else:
                 save_data()
                 break
+
+    elif choices == "2":
+        # 本を借りる
+        while True:
+            check_number = input("本の登録番号を入力して下さい")
+            if books == check_number:
+                print("この番号は存在します")
+                if books == True:
+                    print("この本は貸し出しできます")
+                    # 貸出人の名前
+                    borrower = input("お名前を記入して下さい: ")
+                    # 借りる本の名前
+                    rental_book = input("本の名前を記入して下さい")
+                    books.append({"借りる人の名前": borrower, "本の名前": rental_book, "貸出": False})
+                    print(len(books))
+                    print("貸出完了")
+                    save_data()
+
+            else:
+                print("番号が見つかりません")
+                continue
