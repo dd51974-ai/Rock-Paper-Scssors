@@ -47,20 +47,31 @@ while True:
         # 本を借りる
         while True:
             check_number = input("本の登録番号を入力して下さい: ")
-            if books == check_number:
-                print("この番号は存在します")
-                if books == False:
-                    print("この本は貸し出しできます")
-                    # 貸出人の名前
-                    borrower = input("お名前を記入して下さい: ")
-                    books.append({"借りる人の名前": borrower, "本の名前": book_title_register, "貸出": True})
-                    print(len(books))
-                    print("貸出完了")
-                    save_data()
-
-            else:
+            found_book = None
+            # 番号を見つけるためのfor文
+            for b in books:
+                if str(b["借りる本の番号"]) == check_number:
+                    found_book = b
+                    break
+            if found_book is None:
                 print("番号が見つかりません")
-                continue
+                break
+            print("この番号は存在します")
+            # 貸出をする
+            if found_book["完了"] == False:
+                print("この本は貸出できます")
+                # 貸出人の名前
+                borrower = input("お名前を記入して下さい: ")
+                # 既存の本の情報を更新する（新しい要素を追加しない）
+                found_book["借りる人の名前"] = borrower
+                found_book["貸出"] = True
+                print("貸出完了")
+                save_data()
+                break
+            else:
+                print("この本は現在貸出中です")
+                break
+
     elif choices == "5":
         print("終了します")
         break
