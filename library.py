@@ -72,11 +72,16 @@ while True:
                 print("この本は現在貸出中です")
                 break
 
+    # 借りた本を返却
     elif choices == "3":
         return_book = input("借りてる本の番号を入力して下さい")
         return_book = False
         print("返却完了")
         break
+
+    # 一覧表示
+    elif choices == "4":
+        print("一覧表示")
 
     elif choices == "5":
         print("終了します")
