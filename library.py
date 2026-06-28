@@ -81,7 +81,13 @@ while True:
 
     # 一覧表示
     elif choices == "4":
-        print("一覧表示")
+        if not books:
+            print("リストがありません")
+        else:
+            print("一覧表示")
+            for i, record in enumerate(books, 1):
+                mark = "✅" if record["完了"] else " "
+                print(f"[{mark} ]{i}, {record["名前"]}")
 
     elif choices == "5":
         print("終了します")
