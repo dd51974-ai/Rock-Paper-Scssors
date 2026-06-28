@@ -41,6 +41,7 @@ while True:
                 continue
             else:
                 save_data()
+                print("登録しました")
                 break
 
     elif choices == "2":
@@ -56,9 +57,11 @@ while True:
             if found_book is None:
                 print("番号が見つかりません")
                 break
-            print("この番号は存在します")
+            elif found_book is True:
+                print("この番号は存在します")
+                continue
             # 貸出をする
-            if found_book["完了"] == False:
+            elif found_book["完了"] is False:
                 print("この本は貸出できます")
                 # 貸出人の名前
                 borrower = input("お名前を記入して下さい: ")
@@ -74,10 +77,16 @@ while True:
 
     # 借りた本を返却
     elif choices == "3":
-        return_book = input("借りてる本の番号を入力して下さい")
-        return_book = False
-        print("返却完了")
-        break
+        return_book = int(input("借りてる本の番号を入力して下さい: "))
+        if 0 < return_book < books:
+            data = json.loads("library_books_list.json")
+            return_book = False
+            print("返却完了")
+            save_data()
+            break
+        else:
+            print("番号が存在しません")
+            continue
 
     # 一覧表示
     elif choices == "4":
@@ -87,7 +96,7 @@ while True:
             print("一覧表示")
             for i, record in enumerate(books, 1):
                 mark = "✅" if record["完了"] else " "
-                print(f"[{mark} ]{i}, {record["名前"]}")
+                print(f"[{mark} ]{i}, {record["本の名前"]}")
 
     elif choices == "5":
         print("終了します")
