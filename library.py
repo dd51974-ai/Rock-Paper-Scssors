@@ -12,7 +12,7 @@ def save_data():
 if os.path.exists("library_books_list.json"):
     with open("library_books_list.json", "r", encoding="utf-8") as f:
         data = json.load(f)
-        tasks = data.get("books", [])
+        books = data.get("books", [])
 
 book = {
     "借りる本の番号": books,
@@ -57,11 +57,12 @@ while True:
             if found_book is None:
                 print("番号が見つかりません")
                 break
-            elif found_book is True:
-                print("この番号は存在します")
-                continue
+
+            print("この番号は存在します")
+
             # 貸出をする
-            elif found_book["完了"] is False:
+            # 本が未貸出ならここで貸出処理
+            if found_book["完了"] == False:
                 print("この本は貸出できます")
                 # 貸出人の名前
                 borrower = input("お名前を記入して下さい: ")
