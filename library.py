@@ -62,7 +62,7 @@ while True:
 
             # 貸出をする
             # 本が未貸出ならここで貸出処理
-            if found_book["完了"] == False:
+            if found_book["貸出"] == False:
                 print("この本は貸出できます")
                 # 貸出人の名前
                 borrower = input("お名前を記入して下さい: ")
@@ -79,12 +79,10 @@ while True:
     # 借りた本を返却
     elif choices == "3":
         return_book = int(input("借りてる本の番号を入力して下さい: "))
-        if 0 < return_book < books:
-            data = json.loads("library_books_list.json")
-            return_book = False
+        if 0 <= return_book < len(books):
+            books[return_book]["borrowed"] = False
             print("返却完了")
             save_data()
-            break
         else:
             print("番号が存在しません")
             continue
