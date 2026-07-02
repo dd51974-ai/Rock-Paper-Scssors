@@ -16,6 +16,7 @@ if os.path.exists("library_books_list.json"):
 
 book = {
     "借りる本の番号": books,
+    "返す本の番号": books,
     "本の名前": "",
     "借りる人の名前": None,
     "貸出": False,
@@ -35,7 +36,7 @@ while True:
             print("本の新規登録をお願いします: ")
             book_title_register = input("本のタイトルを入力して下さい: ")
 
-            books.append({"借りる本の番号": len(books) + 1, "本の名前": book_title_register, "貸出": False, "完了": False})
+            books.append({"借りる本の番号": len(books) + 1, "返す本の番号": len(books) + 1, "本の名前": book_title_register, "貸出": False, "完了": False})
             print(len(books))
             if books == "":
                 print("記入をお願いします")
@@ -79,14 +80,30 @@ while True:
 
     # 借りた本を返却
     elif choices == "3":
-        return_book = int(input("借りてる本の番号を入力して下さい: "))
-        if 0 <= return_book < len(books):
-            books[return_book]["貸出"] = False
-            print("返却完了")
-            save_data()
-        else:
-            print("番号が存在しません")
+        return_book = input("借りてる本の番号を入力して下さい: ")
+        find_out = None
+        for a in books:
+            if str(a["返す本の番号"]) == return_book:
+                find_out = a
+                break
+
+            if find_out is None:
+                print("番号が見つかりません")
+                break
+
+        # find_outで見つけた該当の本をその後の処理に使う
+        if find_out is None:
+            print("番号が見つかりません")
             continue
+        if find_out["貸出"] == False:
+            print("この本はまだ借りられてません")
+            continue
+        find_out["貸出"] = False
+        find_out["完了"] = True
+        # 返却したので借りてる人をリセット(任意)
+        find_out["借りる人の名前"] = None
+        print("返却完了")
+        save_data()
 
     # 一覧表示
     elif choices == "4":
