@@ -86,10 +86,7 @@ while True:
             if str(a["返す本の番号"]) == return_book:
                 find_out = a
                 break
-
-            if find_out is None:
-                print("番号が見つかりません")
-                break
+            # ここで終わり。「見つからなかった時の処理」はループの外に出す
 
         # find_outで見つけた該当の本をその後の処理に使う
         if find_out is None:
