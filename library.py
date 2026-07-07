@@ -79,6 +79,7 @@ while True:
                 break
 
     # 借りた本を返却
+    # 要修正
     elif choices == "3":
         return_book = input("借りてる本の番号を入力して下さい: ")
         find_out = None
