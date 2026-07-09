@@ -15,7 +15,7 @@ if os.path.exists("library_books_list.json"):
         books = data.get("books", [])
 
 book = {
-    "借りる本の番号": books,
+
     "返す本の番号": books,
     "本の名前": "",
     "借りる人の名前": None,
@@ -35,13 +35,12 @@ while True:
         while True:
             print("本の新規登録をお願いします: ")
             book_title_register = input("本のタイトルを入力して下さい: ")
-
-            books.append({"借りる本の番号": len(books) + 1, "返す本の番号": len(books) + 1, "本の名前": book_title_register, "貸出": False, "完了": False})
-            print(len(books))
-            if books == "":
+            # 空欄チェックを機能させる(Avoid to empty registration book title)
+            if book_title_register == "":
                 print("記入をお願いします")
                 continue
             else:
+                books.append({"借りる本の番号": len(books) + 1, "返す本の番号": len(books) + 1, "本の名前": book_title_register, "貸出": False, "完了": False})
                 save_data()
                 print("登録しました")
                 break
@@ -110,8 +109,8 @@ while True:
         else:
             print("一覧表示")
             for i, record in enumerate(books, 1):
-                mark = "✅" if record["完了"] else " "
-                print(f"[{mark} ]{i}, {record["本の名前"]}")
+                mark = "✅" if record["完了"] else record[" "] == " "
+                print(f"[{mark} ]{i}, {record['本の名前']}")
 
     elif choices == "5":
         print("終了します")
