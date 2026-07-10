@@ -15,12 +15,11 @@ if os.path.exists("library_books_list.json"):
         books = data.get("books", [])
 
 book = {
-
     "返す本の番号": books,
     "本の名前": "",
     "借りる人の名前": None,
     "貸出": False,
-    "返却": False
+    "完了": False
 }
 
 while True:
@@ -109,7 +108,7 @@ while True:
         else:
             print("一覧表示")
             for i, record in enumerate(books, 1):
-                mark = "✅" if record["完了"] else record[" "] == " "
+                mark = "✅" if record["完了"] else " "
                 print(f"[{mark} ]{i}, {record['本の名前']}")
 
     elif choices == "5":
