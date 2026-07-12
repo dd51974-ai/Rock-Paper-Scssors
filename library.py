@@ -99,7 +99,7 @@ while True:
         else:
             print("一覧表示")
             for i, record in enumerate(books, 1):
-                mark = "✅" if record["完了"] else " "
+                mark = "貸出中" if record["貸出"] else "在庫あり"
                 print(f"[{mark} ]{i}, {record['本の名前']}")
 
     elif choices == "5":
