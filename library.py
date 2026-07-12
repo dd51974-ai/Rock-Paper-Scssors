@@ -1,7 +1,6 @@
 import json
 import os
 books = []
-print(len(books))
 
 # Create def save_data():
 def save_data():
@@ -13,14 +12,6 @@ if os.path.exists("library_books_list.json"):
     with open("library_books_list.json", "r", encoding="utf-8") as f:
         data = json.load(f)
         books = data.get("books", [])
-
-book = {
-    "返す本の番号": books,
-    "本の名前": "",
-    "借りる人の名前": None,
-    "貸出": False,
-    "完了": False
-}
 
 while True:
     print("1: 本を新規登録")
